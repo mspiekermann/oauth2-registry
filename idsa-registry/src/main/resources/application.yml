@@ -1,0 +1,14 @@
+# ids-registry/src/main/resources/application.yml
+server:
+  port: 9000
+  servlet:
+    session:
+      cookie:
+        name: IDSASESSION
+        same-site: Lax
+spring:
+  application:
+    name: ids-registry
+logging:
+  level:
+    org.springframework.security: INFO

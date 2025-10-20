@@ -1,0 +1,15 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="utf-8"><title>Profile</title></head>
+<body>
+<h1>Welcome, <span th:text="${username}">user</span></h1>
+
+<h3>Connector endpoint</h3>
+<pre th:text="${endpoint}">N/A</pre>
+
+<h3>ID Token claims</h3>
+<pre th:text="${allClaims}">{}</pre>
+
+<p><a href="/">Home</a> | <a href="/logout">Logout</a></p>
+</body>
+</html>

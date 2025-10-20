@@ -1,0 +1,27 @@
+# demo-service/src/main/resources/application.yml
+server:
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        name: DEMOSESSION
+        same-site: Lax
+spring:
+  application:
+    name: demo-service
+  security:
+    oauth2:
+      client:
+        registration:
+          idsa:
+            client-id: demo-service
+            client-secret: demo-secret
+            scope: openid,profile,connector.read
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            authorization-grant-type: authorization_code
+        provider:
+          idsa:
+            issuer-uri: http://localhost:9000
+logging:
+  level:
+    org.springframework.security: TRACE

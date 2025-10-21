@@ -2,7 +2,9 @@
 
 In today’s data economy, **dataspaces** promise trusted data sharing across organizational boundaries. Yet, many current initiatives rely on **central governance authorities** that onboard participants. While this works for early-stage deployments, it limits scalability and impedes the emergence of dynamic, distributed ecosystems.
 
-This project explores how **OAuth2 mechanisms** can be applied to dataspaces to enable **scalable onboarding**—without locking participants into individual governance silos.
+This project explores how **OAuth2 mechanisms** can be applied to dataspaces to enable **scalable onboarding**—without locking participants into individual governance silos. It is a POC and by no means should be used in production! It is just to bootstrap the discussion within the dataspace community, based on some working code and not just paperwork. 
+
+**There is no direct link to IDSA or some service offering by the association, it is used as an example only!**
 
 ---
 
@@ -51,7 +53,7 @@ Similarly, dataspaces need **federated onboarding and authorization**:
 
 Imagine a future where your connector, agent, or company dashboard offers:
 
-> 👉 **“Log in with IDSA”**  
+> 👉 **“Log in with IDSA”** 
 > 👉 **“Join via Catena-X Trust Authority”**  
 > 👉 **“Authenticate with Eclipse Foundation”**
 

@@ -63,3 +63,16 @@ Using OAuth2-based delegation, **trusted identity providers** could share verifi
 - security attestations
 - certifications
 - trust level agreements
+
+## 🚀 Getting Started: Demo Application
+
+To illustrate the concept, this project includes a **demo application** that demonstrates how OAuth2 mechanisms can be used to register and authenticate dataspace participants dynamically. The demo simulates a minimal dataspace ecosystem with a mock identity provider and a sample dataspace service. You can run it locally to explore the OAuth2 flows and understand how trusted registration could work in practice.
+
+> 💡 Detailed setup instructions and configuration steps will be provided below — simply follow them to start the demo and experiment with different onboarding scenarios.
+
+1. Clone the repository
+2. Start the registry service `./gradlew :idsa-registry:bootRun`
+3. Start the demo service `./gradlew :demo-service:clean :demo-service:bootRun`
+4. Open `localhost:8080` and click on *login with IDSA*
+5. Use `alice / password` or `bob / password`
+6. View the registered Connector endpoints

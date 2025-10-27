@@ -1,2 +1,2 @@
 rootProject.name = "oauth2-registry"
-include("idsa-registry", "demo-service")
+include("idsa-registry", "did-registry", "demo-service")

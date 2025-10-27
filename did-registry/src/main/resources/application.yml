@@ -1,0 +1,12 @@
+server:
+  port: 9100
+  servlet:
+    session:
+      cookie:
+        name: DIDREGSESSION
+spring:
+  application:
+    name: did-registry
+logging:
+  level:
+    org.springframework.security: INFO

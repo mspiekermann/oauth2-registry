@@ -1,27 +1,42 @@
-# demo-service/src/main/resources/application.yml
 server:
   port: 8080
   servlet:
     session:
       cookie:
         name: DEMOSESSION
-        same-site: Lax
+
 spring:
   application:
     name: demo-service
+
   security:
     oauth2:
       client:
         registration:
+          # IDSA Registry (centralized auth)
           idsa:
             client-id: demo-service
             client-secret: demo-secret
             scope: openid,profile,connector.read
-            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
             authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+
+          # DID Registry (decentralized auth)
+          did:
+            client-id: demo-service
+            client-secret: demo-secret
+            scope: openid,profile,connector.read
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+
         provider:
+          # Classic IDSA Registry
           idsa:
             issuer-uri: http://localhost:9000
+          # DID-based registry
+          did:
+            issuer-uri: http://localhost:9100
+
 logging:
   level:
-    org.springframework.security: TRACE
+    org.springframework.security: INFO

@@ -1,0 +1,30 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="utf-8"><title>DID Login</title></head>
+<body>
+<h2>DID Sign-In</h2>
+
+<p>Sign the challenge with your DID key and paste the compact JWS. For quick testing, use <code>did:web:example.com</code> (bypass).</p>
+
+<h3>Challenge</h3>
+<pre th:text="${challenge}">challenge</pre>
+
+<form method="post" th:action="@{/login}">
+    <!-- CSRF token -->
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+    <div>
+        <label>DID</label><br>
+        <input name="did" placeholder="did:web:example.com" style="min-width:360px"/>
+    </div>
+    <div style="margin-top:.5rem;">
+        <label>JWS (compact)</label><br>
+        <textarea name="jws" rows="6" cols="90" placeholder="eyJhbGciOiJFZERTQSJ9..."></textarea>
+    </div>
+    <div style="margin-top:1rem;">
+        <button type="submit">Continue</button>
+    </div>
+</form>
+
+<p th:if="${param.error}" style="color:#c00;">Verification failed. Check DID, JWS, and challenge.</p>
+</body>
+</html>
